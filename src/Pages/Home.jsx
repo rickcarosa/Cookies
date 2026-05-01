@@ -1,8 +1,11 @@
 import { HomeWrapper } from '../StyledComponents/Home'
+import Nav from '../components/Nav'
+import Hero from '../components/Hero'
 
 const Home = () => (
   <HomeWrapper>
-    <h1>Home</h1>
+    <Nav />
+    <Hero />
   </HomeWrapper>
 )
 
