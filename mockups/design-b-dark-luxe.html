@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jojo's Sugar Studio — Design B: Dark Luxe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Great+Vibes&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold:        #D4AF6A;
+      --gold-light:  #EDD99A;
+      --gold-muted:  #8A6E38;
+      --bg:          #0E0C09;
+      --bg-2:        #171410;
+      --bg-3:        #201C16;
+      --green:       #1E3B1A;
+      --green-light: #2D5A27;
+      --white:       #F5F0E8;
+      --gray:        #7A7060;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--bg);
+      color: var(--white);
+      font-weight: 300;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 72px;
+      background: rgba(14,12,9,0.85);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-logo {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.2rem;
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 48px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(245,240,232,0.6);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover { color: var(--gold-light); }
+
+    .nav-order {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(212,175,106,0.4);
+      padding: 10px 24px;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .nav-order:hover {
+      background: var(--gold);
+      color: var(--bg);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 140px 80px 100px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 60% at 50% 40%, rgba(45,90,39,0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 80% 80%, rgba(212,175,106,0.06) 0%, transparent 60%);
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 0.65rem;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: var(--gold-muted);
+      margin-bottom: 40px;
+    }
+
+    .hero-tag::before,
+    .hero-tag::after {
+      content: '';
+      display: block;
+      width: 30px; height: 1px;
+      background: var(--gold-muted);
+    }
+
+    .hero-name {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(5rem, 12vw, 11rem);
+      line-height: 0.9;
+      color: var(--gold);
+      text-shadow: 0 0 60px rgba(212,175,106,0.2);
+      margin-bottom: 16px;
+      position: relative;
+    }
+
+    .hero-studio {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(0.9rem, 2vw, 1.4rem);
+      font-weight: 400;
+      letter-spacing: 0.6em;
+      text-transform: uppercase;
+      color: rgba(245,240,232,0.5);
+      margin-bottom: 56px;
+    }
+
+    .hero-image-wrap {
+      width: min(420px, 70vw);
+      aspect-ratio: 1;
+      margin: 0 auto 56px;
+      position: relative;
+    }
+
+    .hero-ring {
+      position: absolute;
+      inset: -20px;
+      border-radius: 50%;
+      border: 1px solid rgba(212,175,106,0.2);
+      animation: spin 30s linear infinite;
+    }
+
+    .hero-ring-2 {
+      position: absolute;
+      inset: -40px;
+      border-radius: 50%;
+      border: 1px dashed rgba(212,175,106,0.1);
+      animation: spin 45s linear infinite reverse;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .hero-ring::before {
+      content: '✦';
+      position: absolute;
+      top: -8px; left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.6rem;
+      color: var(--gold);
+    }
+
+    .hero-circle {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #2a2018, #0e0c09);
+      border: 1px solid rgba(212,175,106,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-cookie-img {
+      width: 90%;
+      height: 90%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .cookie-placeholder {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4rem;
+      color: rgba(212,175,106,0.3);
+    }
+
+    .hero-desc {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      line-height: 1.9;
+      color: rgba(245,240,232,0.5);
+      max-width: 540px;
+      margin: 0 auto 48px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--bg);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      padding: 16px 48px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .btn-gold:hover { background: var(--gold-light); }
+
+    .btn-outline {
+      border: 1px solid rgba(212,175,106,0.35);
+      color: var(--gold);
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      padding: 16px 48px;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+      background: rgba(212,175,106,0.05);
+    }
+
+    /* ── SCROLL INDICATOR ── */
+    .scroll-hint {
+      position: absolute;
+      bottom: 40px; left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(245,240,232,0.3);
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(212,175,106,0.4), transparent);
+      animation: scrollpulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollpulse {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1; }
+    }
+
+    /* ── STRIP ── */
+    .strip {
+      background: var(--green);
+      padding: 20px 0;
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+    }
+
+    .strip-item {
+      font-size: 0.65rem;
+      font-weight: 400;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: rgba(245,240,232,0.7);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .strip-item::before { content: '✦'; color: var(--gold); font-size: 0.5rem; }
+
+    /* ── GALLERY ── */
+    .gallery {
+      padding: 140px 0;
+      background: var(--bg-2);
+    }
+
+    .gallery-header {
+      text-align: center;
+      margin-bottom: 80px;
+      padding: 0 80px;
+    }
+
+    .section-tag {
+      font-size: 0.65rem;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: var(--gold-muted);
+      margin-bottom: 20px;
+    }
+
+    .section-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1.2;
+    }
+
+    .section-heading em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .gallery-masonry {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      grid-template-rows: 280px 280px;
+      gap: 3px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .g-item {
+      background: var(--bg-3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .g-item:first-child { grid-row: span 2; }
+
+    .g-inner {
+      width: 100%; height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.6s ease;
+    }
+
+    .g-item:hover .g-inner { transform: scale(1.06); }
+
+    .g-item:nth-child(1) .g-inner { background: linear-gradient(145deg, #1c1a12, #0e0c09); }
+    .g-item:nth-child(2) .g-inner { background: linear-gradient(145deg, #141c12, #0c140a); }
+    .g-item:nth-child(3) .g-inner { background: linear-gradient(145deg, #1a1418, #120c10); }
+    .g-item:nth-child(4) .g-inner { background: linear-gradient(145deg, #1c1810, #14120a); }
+    .g-item:nth-child(5) .g-inner { background: linear-gradient(145deg, #121814, #0a100c); }
+
+    .g-label {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 20px 24px;
+      background: linear-gradient(to top, rgba(14,12,9,0.8), transparent);
+      font-family: 'Playfair Display', serif;
+      font-size: 0.95rem;
+      font-style: italic;
+      color: rgba(245,240,232,0.8);
+      transform: translateY(100%);
+      transition: transform 0.4s ease;
+    }
+
+    .g-item:hover .g-label { transform: translateY(0); }
+
+    .g-placeholder {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2rem;
+      color: rgba(212,175,106,0.2);
+    }
+
+    /* ── QUOTE ── */
+    .quote-section {
+      padding: 120px 80px;
+      text-align: center;
+      background: var(--bg);
+      position: relative;
+    }
+
+    .quote-section::before {
+      content: '"';
+      position: absolute;
+      top: 60px; left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: 12rem;
+      color: rgba(212,175,106,0.04);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .quote-text {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.4rem, 3vw, 2.4rem);
+      font-style: italic;
+      font-weight: 400;
+      color: rgba(245,240,232,0.8);
+      max-width: 800px;
+      margin: 0 auto 32px;
+      line-height: 1.6;
+    }
+
+    .quote-text span { color: var(--gold); }
+
+    .quote-attr {
+      font-size: 0.68rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold-muted);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bg-2);
+      border-top: 1px solid rgba(212,175,106,0.1);
+      padding: 60px 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-logo {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.8rem;
+      color: var(--gold);
+    }
+
+    .footer-copy {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      color: var(--gray);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 28px;
+    }
+
+    .footer-links a {
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gray);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    .design-badge {
+      position: fixed;
+      bottom: 20px; right: 20px;
+      background: var(--gold);
+      color: var(--bg);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 8px 16px;
+      z-index: 999;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+<div class="design-badge">Design B — Dark Luxe</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Jojo's</div>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Gallery</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+  <a href="#" class="nav-order">Place an Order</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-tag">Handcrafted Sugar Cookies</div>
+
+  <h1 class="hero-name">Jojo's</h1>
+  <p class="hero-studio">Sugar Studio</p>
+
+  <div class="hero-image-wrap">
+    <div class="hero-ring"></div>
+    <div class="hero-ring-2"></div>
+    <div class="hero-circle">
+      <div class="cookie-placeholder">J</div>
+    </div>
+  </div>
+
+  <p class="hero-desc">
+    Where sugar becomes art. Every cookie is a handcrafted original —
+    painted with intention, baked with love.
+  </p>
+
+  <div class="hero-buttons">
+    <a href="#" class="btn-gold">Explore the Gallery</a>
+    <a href="#" class="btn-outline">Custom Orders</a>
+  </div>
+
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="strip-item">Weddings</div>
+  <div class="strip-item">Birthdays</div>
+  <div class="strip-item">Baby Showers</div>
+  <div class="strip-item">Corporate Events</div>
+  <div class="strip-item">Holidays</div>
+</div>
+
+<!-- GALLERY -->
+<section class="gallery">
+  <div class="gallery-header">
+    <p class="section-tag">The Portfolio</p>
+    <h2 class="section-heading">Crafted with <em>precision</em></h2>
+  </div>
+  <div class="gallery-masonry">
+    <div class="g-item">
+      <div class="g-inner"><div class="g-placeholder">Jojo's</div></div>
+      <div class="g-label">Signature Collection</div>
+    </div>
+    <div class="g-item">
+      <div class="g-inner"><div class="g-placeholder">✦</div></div>
+      <div class="g-label">Wedding Series</div>
+    </div>
+    <div class="g-item">
+      <div class="g-inner"><div class="g-placeholder">✦</div></div>
+      <div class="g-label">Floral</div>
+    </div>
+    <div class="g-item">
+      <div class="g-inner"><div class="g-placeholder">✦</div></div>
+      <div class="g-label">Seasonal</div>
+    </div>
+    <div class="g-item">
+      <div class="g-inner"><div class="g-placeholder">✦</div></div>
+      <div class="g-label">Custom</div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote-section">
+  <p class="quote-text">
+    "Sugar cookies so beautiful, you almost don't want to eat them —
+    <span>almost.</span>"
+  </p>
+  <p class="quote-attr">— A very happy customer</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Jojo's Sugar Studio</div>
+  <div class="footer-copy">© 2026 Jojo's Sugar Studio</div>
+  <div class="footer-links">
+    <a href="#">Instagram</a>
+    <a href="#">Facebook</a>
+    <a href="#">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
