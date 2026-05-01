@@ -1,9 +1,26 @@
+import colors from '../assets/colors'
+
+const breakpoints = {
+  sm: '480px',
+  md: '768px',
+  lg: '1024px',
+  xl: '1280px',
+}
+
 const theme = {
+  colors,
   fonts: {
-    sans: "system-ui, -apple-system, sans-serif",
-    mono: "ui-monospace, Consolas, monospace",
+    script: "'Great Vibes', cursive",
+    serif:  "'Cormorant Garamond', serif",
+    sans:   "'Jost', sans-serif",
   },
-  colors: {},
+  breakpoints,
+  media: {
+    sm: `@media (min-width: ${breakpoints.sm})`,
+    md: `@media (min-width: ${breakpoints.md})`,
+    lg: `@media (min-width: ${breakpoints.lg})`,
+    xl: `@media (min-width: ${breakpoints.xl})`,
+  },
   spacing: {},
 }
 
