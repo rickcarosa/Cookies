@@ -32,7 +32,7 @@ export const HeroText = styled.div`
   position: relative;
 
   ${({ theme }) => theme.media.md} {
-    align-items: flex-start;
+    align-items: center;
     text-align: left;
     padding: 50px 56px 50px 50px;
   }

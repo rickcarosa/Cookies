@@ -39,6 +39,10 @@ const Nav = () => {
         <NavLogo>Jojo&apos;s</NavLogo>
       </NavBrand>
 
+      <NavRight>
+        <BrandWordmark>Jojo&apos;s Sugar Studio</BrandWordmark>
+      </NavRight>
+
       <NavLinks $open={open}>
         <li><a href="#" onClick={close}>Home</a></li>
         <li><a href="#gallery" onClick={close}>Gallery</a></li>
@@ -56,10 +60,6 @@ const Nav = () => {
         <span />
         <span />
       </HamburgerBtn>
-
-      <NavRight>
-        <BrandWordmark>Jojo&apos;s Sugar Studio</BrandWordmark>
-      </NavRight>
     </NavWrapper>
   )
 }

@@ -156,12 +156,18 @@ export const NavLinks = styled.ul`
   }
 `
 
-/* Right slot — full brand wordmark on desktop (matches mockup footer style) */
+/* Brand wordmark — absolutely centered to the entire nav bar so its
+   position is independent of the badge and link widths. */
 export const NavRight = styled.div`
   display: none;
 
   ${({ theme }) => theme.media.md} {
     display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
   }
 `
 
