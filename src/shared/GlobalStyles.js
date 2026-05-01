@@ -73,6 +73,16 @@ const GlobalStyles = createGlobalStyle`
 
   html {
     font-size: 16px;
+    /* Offset anchor jumps so the fixed nav doesn't cover the top
+       of the targeted section. Matches the hero's padding-top. */
+    scroll-padding-top: 65px;
+    scroll-behavior: smooth;
+  }
+
+  ${({ theme }) => theme.media.md} {
+    html {
+      scroll-padding-top: 74px;
+    }
   }
 
   body {
