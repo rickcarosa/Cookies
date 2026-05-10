@@ -9,18 +9,18 @@ import {
   GalleryLabel,
 } from '../StyledComponents/Gallery'
 
+import cookie1    from '../assets/images/cookie1.webp'
 import flower     from '../assets/images/flower.webp'
 import mothersday from '../assets/images/mothersday.webp'
-import pencil     from '../assets/images/pencil.webp'
 import apple      from '../assets/images/apple.webp'
 import taco       from '../assets/images/taco.webp'
 
 const ITEMS = [
-  { label: 'Signature Collection', image: taco,       alt: 'Taco sugar cookie' },
+  { label: 'Signature Collection', image: cookie1,    alt: "Jojo's Sugar Studio signature cookie" },
   { label: 'Special Events',       image: apple,      alt: 'Apple sugar cookie' },
   { label: 'Holidays',             image: mothersday, alt: "Mother's Day cookies" },
   { label: 'Seasonal',             image: flower,     alt: 'Pink rose sugar cookie' },
-  { label: 'Custom',               image: pencil,     alt: 'Pencil sugar cookie' },
+  { label: 'Custom',               image: taco,       alt: 'Taco sugar cookie' },
 ]
 
 const Gallery = () => (

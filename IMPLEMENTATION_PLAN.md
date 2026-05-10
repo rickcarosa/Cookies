@@ -13,7 +13,8 @@ The A+B blend mockup (`mockups/design-ab-blend.html`) was approved as the design
 - `src/main.jsx` — wraps the app in `ThemeProvider`
 - `src/assets/colors.js` — single source of truth for color tokens
 - `src/assets/fonts/` — self-hosted `.woff2` font files
-- `src/assets/images/cookie1.webp` — hero cookie photo (transparent hexagonal WebP, optimized from PNG)
+- `src/assets/images/logoimage.webp` — hero logo cookie photo (transparent hexagonal WebP)
+- `src/assets/images/cookie1.webp`, `flower.webp`, `mothersday.webp`, `apple.webp`, `taco.webp` — gallery images
 - `public/favicon.svg` — hexagon J badge favicon
 - `mockups/design-ab-blend.html` — visual reference for all styles
 

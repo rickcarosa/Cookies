@@ -31,7 +31,7 @@ src/
 ├── assets/
 │   ├── colors.js                    # Brand color tokens (single source of truth)
 │   ├── fonts/                       # Self-hosted .woff2 files (no CDN)
-│   └── images/                      # WebP photos (cookie1, flower, mothersday, pencil, apple, taco)
+│   └── images/                      # WebP photos (logoimage, cookie1, flower, mothersday, apple, taco)
 ├── shared/
 │   ├── GlobalStyles.js              # @font-face, CSS reset, scroll-padding
 │   └── theme.js                     # Imports colors.js, defines fonts/breakpoints
@@ -121,7 +121,7 @@ Mobile-first. Base styles target ≤ 480px; larger screens are progressive enhan
 | # | Section | Component | Notes |
 |---|---------|-----------|-------|
 | 1 | Nav | `Nav.jsx` | Hexagon J badge (left), centered "Jojo's Sugar Studio" wordmark, nav links (right). Hamburger menu below `md`. |
-| 2 | Hero | `Hero.jsx` | Split layout: text left, parchment image pane right with the cookie photo inside spinning rings. "Custom Orders" CTA was intentionally omitted — see *No-orders policy* below. |
+| 2 | Hero | `Hero.jsx` | Split layout: text left, parchment image pane right with the hexagonal logo cookie (`logoimage.webp`) inside spinning rings. "Custom Orders" CTA was intentionally omitted — see *No-orders policy* below. |
 | 3 | Marquee | `Marquee.jsx` | Sage-dark scrolling strip listing occasions (Weddings, Birthdays, etc.). Items duplicated under the hood for a seamless loop. |
 | 4 | Pillars | `Pillars.jsx` | Four brand pillars with hand-drawn outline SVGs: Heart, Cookie, Branch, Gift Box. |
 | 5 | Gallery | `Gallery.jsx` | Five-cell masonry. Featured tile spans 2 rows on desktop. Labels slide up on hover (md+); always visible on mobile for tap-friendliness. |
