@@ -30,8 +30,8 @@ src/
 ├── main.jsx                         # Entry: ThemeProvider + GlobalStyles + App
 ├── assets/
 │   ├── colors.js                    # Brand color tokens (single source of truth)
-│   ├── cookie1.png                  # Hero cookie photo (transparent hexagon)
-│   └── fonts/                       # Self-hosted .woff2 files (no CDN)
+│   ├── fonts/                       # Self-hosted .woff2 files (no CDN)
+│   └── images/                      # WebP photos (cookie1, flower, mothersday, pencil, apple, taco)
 ├── shared/
 │   ├── GlobalStyles.js              # @font-face, CSS reset, scroll-padding
 │   └── theme.js                     # Imports colors.js, defines fonts/breakpoints

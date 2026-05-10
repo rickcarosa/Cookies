@@ -17,7 +17,7 @@ import {
   CookieImage,
   ScrollHint,
 } from '../StyledComponents/Hero'
-import cookie1 from '../assets/cookie1.png'
+import cookie1 from '../assets/images/cookie1.webp'
 
 const BotanicalSprig = ({ className }) => (
   <Botanical
