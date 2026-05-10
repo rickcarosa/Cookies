@@ -17,7 +17,7 @@ import {
   CookieImage,
   ScrollHint,
 } from '../StyledComponents/Hero'
-import cookie1 from '../assets/images/cookie1.webp'
+import logoimage from '../assets/images/logoimage.webp'
 
 const BotanicalSprig = ({ className }) => (
   <Botanical
@@ -73,7 +73,7 @@ const Hero = () => (
         <Ring className="ring-1" />
         <Ring className="ring-2" />
         <ImageHex>
-          <CookieImage src={cookie1} alt="Jojo's Sugar Studio cookie" />
+          <CookieImage src={logoimage} alt="Jojo's Sugar Studio cookie" />
         </ImageHex>
       </ImageWrap>
 
