@@ -105,6 +105,14 @@ export const GalleryPlaceholder = styled.div`
   color: rgba(184, 144, 60, 0.32);
 `
 
+export const GalleryImage = styled.img`
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 12px 24px rgba(59, 46, 30, 0.18));
+`
+
 export const GalleryLabel = styled.div`
   position: absolute;
   bottom: 0;
